@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <title>Get in Touch! Yusuf's Website</title>
+     </head>
+
+     <body>
+         <header>
+            <h2>Get in Touch!</h2>
+         </header>
+          
+         <main>
+            <section>
+                <h3>Plese fill out the form below:</h3>
+
+                <form method="GET" action="process.html">
+                   <p>
+                    <div>
+                        <strong>
+                            <label for="firstName">
+                                First NAME <span class="required">*</span>
+                            </label>
+                        </strong>
+                    </div>
+                    <br>
+                    <input name="firstName" maxlength="25" size="50" class="padding" placeholder="Please enter email...">
+                   </p>
+
+                   <p>
+                    <div>
+                        <strong>
+                            <label for="LastName">
+                                Lasr NAME <span class="required">*</span>
+                            </label>
+                        </strong>
+                    </div>
+                    <br>
+                    <input name="LastName" maxlength="25" size="50" class="padding" placeholder="Please enter last name...">
+                   </p>
+
+                   <p>
+                    <div>
+                        <strong>
+                            <label for="email">
+                                EMAIL <span class="required">*</span>
+                            </label>
+                        </strong>
+                    </div>
+                    <br>
+                    <input name="email" maxlength="50" size="50" class="padding" placeholder="Please enter last name...">
+                   </p>
+
+                   <p>
+                    <div>
+                        <strong>
+                            <label for="phone">
+                                PHONE NUMBER 
+                            </label>
+                        </strong>
+                    </div>
+                    <br>
+                    <input name="phone" maxlength="10" size="30" class="padding" placeholder="Please enter phone number...">
+                   </p>
+
+                   <hr>
+
+                   <p>
+                    <div>
+                        <strong>
+                            <label for="discovered">
+                                 HOW DID YOU HEAR ABOUT ME?
+                            </label>
+                        </strong>
+                    </div>
+                    <br>
+
+                    <div>
+                        <input type="checkbox" name="discovered" value="Instagram">Instagram
+                        <input type="checkbox" name="discovered" value="Facebook">Facebook
+                        <input type="checkbox" name="discovered" value="Instagram">LinkedIn
+                    </div>
+                    <div>
+                        <input type="checkbox" name="discovered" value="Instagram">Career Builder
+                        <input type="checkbox" name="discovered" value="Facebook">Monster
+                        <input type="checkbox" name="discovered" value="Instagram">Indeed
+                    </div>
+                   </p>
+
+                   <p>
+                    <div>
+                        <strong>
+                            <label for="contactYou">
+                        WHAT IS THE BEST WAY TO CONTACT YOU? <span class="required">*</span>
+                            </label>
+                        </strong>
+                    </div>
+                    <br>
+
+                    <div>
+                        <input type="radio" name="contactYou" value="Email" required> Email
+                        <input type="radio" name="contactYou" value="Phone Call" required> Phone Call
+                        <input type="radio" name="contactYou" value="Text Message" required> Text Message
+                    </div>
+                   </p>
+                   
+                   <p>
+                    <div>
+                        <strong>
+                            <label for="reason">
+                        WHAT IS THE REASON FOR REACHING OUT? <span class="required">*</span>
+                            </label>
+                        </strong>
+                    </div>
+                    <br>
+
+                    <div>
+                        <select name="reason" required>
+                            <option value="" selected>
+                                   Pick on...
+                            </option>
+                            <option value="Inquiry About Work">
+                                 Inquiry About Work
+                            </option>
+                            <option value="Freelace Work">
+                                Freelace Work
+                           </option>
+                           <option value="Incorect Invoice">
+                            Incorect Invoice
+                       </option>
+                       <option value=" General Quetions">
+                        General Quetions
+                       </option>
+                        </select>
+                    </div>
+                      </p>
+
+                      <hr>
+
+                      <p>
+                        <div>
+                            <strong>
+                                <label for="message">
+                                    HOW MAY I HELP YOU?
+                                </label>
+                            </strong>
+                        </div>
+                        <br>
+                        <textarea name="message" rows="15" cols="100" class="padding" placeholder="Please enter query..."></textarea>
+                      </p>
+
+                      <button class="btn" type="submit">Submit &gt;&gt;</button>
+                      <button class="btn" type="reset">Start Over</button>
+
+                     </form>
+            </section>
+         </main>
+     </body>
+</html>
