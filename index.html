@@ -13,7 +13,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 
-                <a class="navbar-brand" href="#">QCC</a>
+                <a class="navbar-brand" href="#">RAJABOV</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -85,9 +85,9 @@
         <section class="banner">
             <div class="banner-overlay">
                 <div class="container">
-                  <h1 class="display-4 fw-bold"> Welcome to My Website!</h1>
+                  <h1 class="display-4 fw-bold">Yusuf's Resume Website</h1>
                   <p class="lead">Making the future brighter day-by-day.</p>
-                  <a href="/LAB2/" class="btn btn-primary  btn-lg">Learn More</a>
+                  <a href="/LAB2/" class="btn btn-primary  btn-lg" style="background-color: green; border: white 2px solid;">Discover More</a>
                 </div>
             </div>
         </section>
@@ -101,29 +101,87 @@
                        
                     <div class="col-sm-4 mb-3">
                         <h3>Homework</h3>
-                        <p>Lorem ipsum and if I run everyday my speed will be faster</p>
-                        <p>I bare a witness that there is no God exept Allah and Muhammed his Prophet and messanger </p>
+                        <b><p>Assignments that challenge my thinking and sharpen my skills</p></b>
+                        <p>Assignments that not only test my knowledge but push me to think critically and creatively. Every task is an opportunity to improve and grow. </p>
                         <a href="/HW5/" class="btn btn-primary">Learn more</a>
                     </div>
 
                     <div class="col-sm-4 mb-3">
                         <h3>Labs</h3>
-                        <p>Lorem ipsum and if I run everyday my speed will be faster</p>
-                        <p>I bare a witness that there is no God exept Allah and Muhammed his Prophet and messanger </p>
+                        <b><p>Hands-on experiments where theory meets practice</p></b>
+                        <p>Where theory comes to life. In the lab, I get hands-on with concepts, experimenting, learning, and pushing boundaries to better understand the world around me</p>
                         <a href="/LAB3/" class="btn btn-primary">Learn more</a>
                     </div>
 
                     <div class="col-sm-4 mb-3">
-                        <h3>My Bio Page</h3>
-                        <p>Lorem ipsum and if I run everyday my speed will be faster</p>
-                        <p>I bare a witness that there is no God exept Allah and Muhammed his Prophet and messanger </p>
+                        <h3>Shortly about me</h3>
+                        <b><p>Get to know me: a journey of learning, growth, and passion</p></b>
+                        <p>An insight into who I am, where I come from, and the journey that has shaped me. From passions to purpose, it’s a reflection of my story and aspirations</p>
                         <a href="/LAB2/" class="btn btn-primary">Learn more</a>
                     </div>
 
                 </div>
             </div>
+                <p></p>
+            <div class="container">
+                <div class="row">
+                       
+                    <div class="col-sm-4 mb-3">
+                        <h3>Achievments</h3>
+                       <b> <p>Celebrating milestones and successes, big and small.</p></b>
+                        <p>Milestones that mark my progress. Whether academic, personal, or professional, each achievement is a step forward toward my bigger goals and dreams</p>
+                        <a href="/HW5/" class="btn btn-primary">Learn more</a>
+                    </div>
+
+                    <div class="col-sm-4 mb-3">
+                        <h3>Hometown</h3>
+                       <b> <p>Roots that shape who I am, and where it all began</p></b>
+                        <p>The place where my story began. My hometown isn’t just a location—it’s a foundation for the values, culture, and experiences that have shaped who I am today </p>
+                        <a href="/LAB3/" class="btn btn-primary">Learn more</a>
+                    </div>
+
+                    <div class="col-sm-4 mb-3">
+                        <h3>Education</h3>
+                        <b><p>Endless learning: shaping the future one lesson at a time</p></b>
+                        <p>Education is the foundation of my future. It's not just about textbooks; it’s about discovering new ideas, challenging myself, and preparing for the challenges ahead.</p>
+                        <a href="/LAB2/" class="btn btn-primary">Learn more</a>
+                    </div>
+
+                </div>
+            </div>
+
+
         </section>
 
+        <section style="background-color: rgb(45, 93, 163);" class="mt-5">
+            <div class="container text-center">
+                <h2 style="color: white;" class="mb-4">About My Language</h2>
+              
+                <p style="color: white;" id="translationText" class="lead">Persian is an important language of the Middle East and Central Asia. It is known as Farsi in Iran, Dari in Afghanistan and Tajik in Tajikistan. It has about 62 million native speakers, ranking it among the world's 20 most widely spoken first languages; another 50 million or more speak it as a second language.</p> <!-- Initial text in Russian -->
+                <button onclick="changeText()" class="btn btn-primary" style="margin-bottom: 10px; background-color: yellow; color: rgb(19, 98, 124);">DoubleTap to Switch Language</button>
+
+            </div>
+        </section>
+        
+        <script type="text/javascript">
+            let isRussian = true; 
+        
+            function changeText() {
+                const englishText = "Persian is an important language of the Middle East and Central Asia. It is known as Farsi in Iran, Dari in Afghanistan and Tajik in Tajikistan. It has about 62 million native speakers, ranking it among the world's 20 most widely spoken first languages; another 50 million or more speak it as a second language.";  // English text
+                const russianText = "فارسی زبان مهم خاورمیانه و آسیای مرکزی است. در ایران به فارسی، در افغانستان به دری و در تاجیکستان به تاجیکی معروف است. این زبان حدود 62 میلیون زبان مادری دارد که آن را در میان 20 زبان اول رایج ترین زبان جهان قرار می دهد. 50 میلیون یا بیشتر از آن به عنوان زبان دوم صحبت می کنند.";  // Russian text
+        
+                // Toggle the text based on the current language
+                if (isRussian) {
+                    document.getElementById("translationText").textContent = englishText;
+                } else {
+                    document.getElementById("translationText").textContent = russianText;
+                }
+        
+                // Toggle the language flag
+                isRussian = !isRussian;
+            }
+        </script>
+        <p></p>
        </main>
 
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -157,7 +215,7 @@
                         <img src="#" alt="Twitter">
                     </a>
                     <a href="#">
-                        <img src="#" alt="Instagram">
+                        <a href="#" class="me-3"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Instagram_logo_2022.svg" alt="Instagram" width="30"></a>
                     </a>
                 </div>
 
@@ -171,5 +229,7 @@
       
 
        </footer>
+      
+
     </body>
 </html>
