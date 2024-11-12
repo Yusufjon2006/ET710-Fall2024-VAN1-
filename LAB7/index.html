@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Satisfaction Survey</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center"><b>Customer Satisfaction Survey</b></h2>
+        <form id="surveyForm" name="surveyForm" novalidate class="survey-form">
+            <!-- Personal Information Section -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Please enter your name" required>
+                <div class="invalid-feedback">Please enter your name</div>
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" name="age" placeholder="Please enter your age" required>
+                <div class="invalid-feedback">Please enter your age</div>
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <select class="form-select" id="gender" name="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="preferNotToSay">Prefer not to say</option>
+                </select>
+                <div class="invalid-feedback">Please select your gender</div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Please enter your email" required>
+                <div class="invalid-feedback">Please enter a valid email address</div>
+            </div>
+            <div class="mb-3">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Please enter your phone number" required>
+                <div class="invalid-feedback">Please enter a valid phone number</div>
+            </div>
+            <!-- Satisfaction Section -->
+            <div class="mb-3">
+                <label for="satisfaction" class="form-label">Satisfaction Level</label>
+                <select class="form-select" id="satisfaction" name="satisfaction" required>
+                    <option value="" disabled selected>Select satisfaction level</option>
+                    <option value="1">1 - Very Dissatisfied</option>
+                    <option value="2">2 - Dissatisfied</option>
+                    <option value="3">3 - Neutral</option>
+                    <option value="4">4 - Satisfied</option>
+                    <option value="5">5 - Very Satisfied</option>
+                </select>
+                <div class="invalid-feedback">Please select a satisfaction level</div>
+            </div>
+            <!-- Preferred Contact Method -->
+            <div class="mb-3">
+                <label class="form-label">Preferred Contact Method</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contactMethod" id="contactEmail" value="email" required>
+                    <label class="form-check-label" for="contactEmail">Email</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contactMethod" id="contactPhone" value="phone" required>
+                    <label class="form-check-label" for="contactPhone">Phone</label>
+                </div>
+                <div class="invalid-feedback">Please select your preferred contact method</div>
+            </div>
+            <!-- Additional Comments -->
+            <div class="mb-3">
+                <label for="comments" class="form-label">Additional Comments</label>
+                <textarea class="form-control" id="comments" name="comments" rows="3" placeholder="Please enter your comments"></textarea>
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    
+    <!-- Results Modal -->
+    <div class="modal fade" id="resultsModal" tabindex="-1" aria-labelledby="resultsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resultsModalLabel">Survey Results</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalContent"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

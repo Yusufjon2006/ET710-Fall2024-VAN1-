@@ -1,0 +1,44 @@
+/* Centering and spacing adjustments */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+}
+
+.survey-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.survey-form h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.survey-form .form-label {
+    font-weight: bold;
+}
+
+.survey-form .form-control, 
+.survey-form .form-select {
+    border-radius: 5px;
+}
+
+.survey-form button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Styling the modal content */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header, .modal-footer {
+    background-color: #f1f1f1;
+}
