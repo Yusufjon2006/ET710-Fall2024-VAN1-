@@ -2,61 +2,70 @@ let currentNumber = '';
 let previousNumber = '';
 let operation = null;
 
-const displayCurrentNumber = document.getElementById('currentNumber');
-const displayPreviousNumber = document.getElementById('previousNumber');
-const displayOperation = document.getElementById('operation');
+const previousNumberElement = document.getElementById('previous-number');
+const currentNumberElement = document.getElementById('current-number');
+const operationElement = document.getElementById('operation');
 
-function appendNumber(number) {
-    currentNumber += number;
-    displayCurrentNumber.textContent = currentNumber;
-}
-
-function setOperation(op) {
-    if (currentNumber === '') return;
-    if (previousNumber !== '') {
-        calculate();
+function calculateResult() {
+    if (previousNumber === '' || currentNumber === '' || operation === null) {
+        return;
     }
-    operation = op;
-    previousNumber = currentNumber;
-    currentNumber = '';
-    displayOperation.textContent = operation;
-    displayPreviousNumber.textContent = previousNumber;
-}
 
-function calculate() {
     let result;
     const prev = parseFloat(previousNumber);
-    const current = parseFloat(currentNumber);
-    if (isNaN(prev) || isNaN(current)) return;
+    const curr = parseFloat(currentNumber);
+
     switch (operation) {
         case '+':
-            result = prev + current;
+            result = prev + curr;
             break;
         case '-':
-            result = prev - current;
+            result = prev - curr;
             break;
         case '*':
-            result = prev * current;
+            result = prev * curr;
             break;
         case '/':
-            result = prev / current;
+            result = curr !== 0 ? prev / curr : 'Error';
             break;
         default:
             return;
     }
+
     currentNumber = result.toString();
-    operation = null;
     previousNumber = '';
-    displayCurrentNumber.textContent = currentNumber;
-    displayOperation.textContent = '';
-    displayPreviousNumber.textContent = '';
+    operation = null;
+    updateDisplay();
+}
+
+function appendNumber(number) {
+    currentNumber += number.toString();
+    updateDisplay();
+}
+
+function setOperation(op) {
+    if (currentNumber === '') {
+        return;
+    }
+
+    if (previousNumber !== '') {
+        calculateResult();
+    }
+    operation = op;
+    previousNumber = currentNumber;
+    currentNumber = '';
+    updateDisplay();
 }
 
 function clearCalculator() {
     currentNumber = '';
     previousNumber = '';
     operation = null;
-    displayCurrentNumber.textContent = '';
-    displayOperation.textContent = '';
-    displayPreviousNumber.textContent = '';
+    updateDisplay();
+}
+
+function updateDisplay() {
+    previousNumberElement.textContent = previousNumber;
+    currentNumberElement.textContent = currentNumber || '0';
+    operationElement.textContent = operation || '';
 }
