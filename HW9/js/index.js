@@ -1,47 +1,37 @@
-// Function to check the date and determine the type of day
-function checkDate(event) {
-    event.preventDefault(); // Prevent page reload
-    const dateInput = document.getElementById("dateInput").value;
+function checkDate()
+{
+    const userDate = document.forms["dateForm"] ["userDate"].value;
+    const outputMsg = document.getElementById('output');
 
-    if (!dateInput) {
-        alert("Please select a date!");
-        return;
+    let isWeekend = checkIfWeekend(userDate);
+    let isHoliday = checkIfHoliday(userDate);
+
+    if( isWeekend || isHoliday)
+    {
+        outputMsg.textContent = "You can relax today.";
+    }    
+    else
+    {
+        outputMsg.textContent = "It's a working day.";
     }
-
-    const date = new Date(dateInput);
-    const currentDayOfWeek = date.getDay(); // 0 = Sunday, 6 = Saturday
-    const currentDayOfMonth = date.getDate();
-    const currentMonth = date.getMonth() + 1; // Months are 0-indexed
-
-    let result = "It's a work day.";
-
-    if (checkIfWeekend(currentDayOfWeek)) {
-        result = "It's a day for relaxation!";
-    } else if (checkIfHoliday(currentDayOfMonth, currentMonth)) {
-        result = "It's a holiday! Relax and enjoy!";
-    }
-
-    document.getElementById("result").innerText = result;
 }
 
-// Function to check if it's a weekend
-function checkIfWeekend(day) {
-    return day === 0 || day === 6 || day === 5; // Sunday, Saturday, or Friday
+function checkIfWeekend(today = "")
+{
+    let date = new Date(today);
+    // 0 - 6
+    let currentDayOfWeek = date.getUTCDay();
+
+    return false;
 }
 
-// Corrected function to check if it's a holiday
-function checkIfHoliday(day, month) {
-    const holidays = [
-        { day: 25, month: 12 }, // Christmas
-        { day: 4, month: 7 },   // Fourth of July
-        { day: 28, month: 11 }  // Thanksgiving
-    ];
+function checkIfHoliday(today = "")
+{
+    let date = new Date(today);
+    let currentDayOfMonth = date.getUTCDate();
+    // Add 1 because the result is zero based.
+    // 0 - 11
+    let currentMonth = (date.getMonth() + 1);
 
-    // Compare day and month with each holiday
-    for (const holiday of holidays) {
-        if (holiday.day === day && holiday.month === month) {
-            return true;
-        }
-    }
     return false;
 }
